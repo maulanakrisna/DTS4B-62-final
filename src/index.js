@@ -18,8 +18,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="login" element={<SignIn />} />
-        <Route path="register" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
