@@ -1,5 +1,5 @@
 import './App.css';
-import Home from './container/Home';
+import Home from './containers/Home';
 
 const App = () => {
   return (
