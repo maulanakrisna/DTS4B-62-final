@@ -10,6 +10,7 @@ import '@fontsource/roboto/700.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignIn from './container/SignIn';
 import SignUp from './container/SignUp';
+import ProtectedRoute from './component/ProtectedRoute';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +18,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<ProtectedRoute>
+          <App />
+          </ProtectedRoute>} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
       </Routes>
