@@ -42,6 +42,17 @@ export default function Blog() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Container maxWidth="sm">
+            <Stack
+              sx={{ pb: 3, pt: 3 }}
+              direction="row"
+              spacing={2}
+              justifyContent="center"
+            >
+              <Button variant="outlined">All News</Button>
+              <Button variant="outlined">Top News</Button>
+            </Stack>
+          </Container>
       <Container maxWidth="lg">
         <main>
           <MainFeaturedMovie post={mainFeaturedMovie} />
@@ -52,17 +63,6 @@ export default function Blog() {
             pt: 1,
           }}
         >
-          <Container maxWidth="sm">
-            <Stack
-              sx={{ pb: 3 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack>
-          </Container>
         </Box>
           <Grid container spacing={4}>
             {featuredMovies.map((post) => (
