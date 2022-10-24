@@ -8,9 +8,9 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SignIn from './container/SignIn';
-import SignUp from './container/SignUp';
-import ProtectedRoute from './component/ProtectedRoute';
+import SignIn from './containers/SignIn';
+import SignUp from './containers/SignUp';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
