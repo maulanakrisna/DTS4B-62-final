@@ -14,8 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import Copyright from '../components/Copyright';
-
-const theme = createTheme();
+import CorpTheme from '../themes/CorpTheme';
 
 export default function SignUp() {
 
@@ -38,7 +37,7 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={CorpTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
