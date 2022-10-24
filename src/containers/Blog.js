@@ -42,12 +42,12 @@ export default function Blog() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
             <Stack
               sx={{ pb: 3, pt: 3 }}
               direction="row"
               spacing={2}
-              justifyContent="center"
+              justifyContent="left"
             >
               <Button variant="outlined">All News</Button>
               <Button variant="outlined">Top News</Button>

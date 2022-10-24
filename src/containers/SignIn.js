@@ -15,8 +15,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
 import { useState } from 'react';
 import Copyright from '../components/Copyright';
-
-const theme = createTheme();
+import CorpTheme from '../themes/CorpTheme';
 
 export default function SignIn() {
 
@@ -41,7 +40,7 @@ export default function SignIn() {
   
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={CorpTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
