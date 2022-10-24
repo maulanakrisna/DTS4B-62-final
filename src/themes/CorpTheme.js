@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 const CorpTheme = createTheme({
     palette: {
-        type: 'dark',
+        mode: 'dark',
         primary: {
           main: '#035B71',
         },
