@@ -7,8 +7,7 @@ import MainFeaturedMovie from '../components/MainFeaturedMovie';
 import FeaturedMovie from '../components/FeaturedMovie';
 import { Box, Button, Stack } from '@mui/material';
 import Copyright from '../components/Copyright';
-import CorpTheme from '../themes/CorpTheme';
-
+import DarkTheme from '../themes/CorpTheme';
 
 const mainFeaturedMovie = {
   title: 'Title of a longer featured blog post',
@@ -40,7 +39,7 @@ const featuredMovies = [
 
 export default function Blog() {
   return (
-    <ThemeProvider theme={CorpTheme}>
+    <ThemeProvider theme={DarkTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
             <Stack
