@@ -3,7 +3,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const TheNewsAPI = createApi({
   reducerPath: 'TheNewsAPI',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.thenewsapi.com/v1/news/locale=id',
+    baseUrl: 'https://api.thenewsapi.com/v1/news/',
+    prepareHeaders: (headers) => {
+      const token = 'XeBh4j9YeLp1UBCBp8paxShW4YDvo13utkOmwFJ1';
+      headers.set('authorization', `Bearer ${token}`)
+    },
   }),
   tagTypes: ['top', 'all'],
   endpoints: (builder) => ({
