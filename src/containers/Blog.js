@@ -1,15 +1,18 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
-import MainFeaturedMovie from '../components/MainFeaturedMovie';
-import FeaturedMovie from '../components/FeaturedMovie';
+import MainFeaturedPost from '../components/MainFeaturedPost';
+import FeaturedPost from '../components/FeaturedPost';
 import { Box, Button, Stack } from '@mui/material';
 import Copyright from '../components/Copyright';
 import DarkTheme from '../themes/CorpTheme';
+import TheNewsAxios from '../services/api/TheNewsAxios';
+import { useGetTopNewsQuery } from '../services/api/TheNewsAPI';
+import tmdb from '../apis/tmdb';
 
-const mainFeaturedMovie = {
+const mainFeaturedPost = {
   title: 'Title of a longer featured blog post',
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
@@ -18,54 +21,50 @@ const mainFeaturedMovie = {
   linkText: 'Continue reading…',
 };
 
-const featuredMovies = [
-  {
-    title: 'Featured post',
-    date: 'Nov 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-  {
-    title: 'Post title',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageLabel: 'Image Text',
-  },
-];
+const Blog = () => {
 
-export default function Blog() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+      const fetchMovies = async () => {
+          try {
+              const fetchedMovies = await tmdb.get("trending/movie/week");
+              setMovies(fetchedMovies.data.results);
+          } catch (error) {
+              console.log(error);
+          }
+      }
+
+      fetchMovies();
+  }, []);
   return (
     <ThemeProvider theme={DarkTheme}>
-      <CssBaseline />
+      <CssBaseline />      
       <Container maxWidth="lg">
+        <main>
+          <MainFeaturedPost post={movies[0]} />
+          <Box
+            sx={{
+              bgcolor: 'background.paper',
+              pb: 1,
+              pt: 1,
+            }}
+          >
+          </Box>
+          <Container maxWidth="lg">
             <Stack
-              sx={{ pb: 3, pt: 3 }}
+              sx={{ pb: 3 }}
               direction="row"
               spacing={2}
-              justifyContent="left"
+              justifyContent="right"
             >
               <Button variant="outlined">All News</Button>
               <Button variant="outlined">Top News</Button>
             </Stack>
           </Container>
-      <Container maxWidth="lg">
-        <main>
-          <MainFeaturedMovie post={mainFeaturedMovie} />
-          <Box
-          sx={{
-            bgcolor: 'background.paper',
-            pb: 1,
-            pt: 1,
-          }}
-        >
-        </Box>
-          <Grid container spacing={4}>
-            {featuredMovies.map((post) => (
-              <FeaturedMovie key={post.title} post={post} />
+          <Grid container spacing={2}>
+            {movies.map((post) => (
+              <FeaturedPost key={post.title} post={post} />
             ))}
           </Grid>
         </main>
@@ -76,3 +75,5 @@ export default function Blog() {
     </ThemeProvider>
   );
 }
+
+export default Blog;
