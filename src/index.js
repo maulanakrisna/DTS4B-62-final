@@ -23,6 +23,9 @@ root.render(
           </ProtectedRoute>} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
+        <Route path="*" element={<ProtectedRoute>
+          <App />
+          </ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

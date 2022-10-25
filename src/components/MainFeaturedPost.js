@@ -71,6 +71,7 @@ function MainFeaturedPost(props) {
 
 MainFeaturedPost.propTypes = {
   post: PropTypes.shape({
+    release_date: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
