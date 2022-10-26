@@ -1,3 +1,15 @@
+Video :
+![DTS4B-62-final](https://user-images.githubusercontent.com/51012366/197917724-dfbaf6b6-6597-4cd5-bd06-26b5d9c92398.gif)
+
+Link :
+https://6357a6ebd1c48f287b05a9d3--silly-crostata-eaa513.netlify.app/login
+
+Penjelasan :
+aplikasi fetch data themoviedb.org
+API menggunakan dari themoviedb.org
+fitur unik sort by vote average
+
+
 # DTS REA4 Final Project
 
 Ketentuan lengkap bisa dilihat di [Final Project Guidelines](https://docs.google.com/document/d/122KyWNQ4xxU4aFwWbM4vIfH7LM4AH2CZEZa3YsEHjCk). 
